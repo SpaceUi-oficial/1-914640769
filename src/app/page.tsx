@@ -4,10 +4,15 @@ import { FaPause } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-
 import CarouselSection from "./components/carruselSection/page";
-import VideoToImage from "./components/VideoToImage/page";
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = videoRef.current.duration; // Se asegura de que el video se quede en el último frame
+    }
+  };
   const video1Ref = useRef<HTMLVideoElement | null>(null);
   const video2Ref = useRef<HTMLVideoElement | null>(null);
 
@@ -50,12 +55,29 @@ export default function Home() {
   const texts = [
     { title: "Comedia", description1: "Todo es posible en el paraíso" },
     { title: "Acción", description1: "El peor robo del mundo." },
-    { title: "Suspenso", description1: "Natalie Portman y Moses Ingram protagonizan un visionario thriller." },
-    { title: "Crimen", description1: "La historia inspirada en crímenes reales y las mujeres que los resolvieron." },
-    { title: "Ciencia ficción", description1: "Una vida, posibilidades infinitas." },
-    { title: "Drama", description1: "Disfruta la versión extendida de Ridley Scott." },
-    { title: "Drama", description1: "El valor para cambiar tu destino está en ti." },
-    { title: "Crimen", description1: "Nueva serie." }
+    {
+      title: "Suspenso",
+      description1:
+        "Natalie Portman y Moses Ingram protagonizan un visionario thriller.",
+    },
+    {
+      title: "Crimen",
+      description1:
+        "La historia inspirada en crímenes reales y las mujeres que los resolvieron.",
+    },
+    {
+      title: "Ciencia ficción",
+      description1: "Una vida, posibilidades infinitas.",
+    },
+    {
+      title: "Drama",
+      description1: "Disfruta la versión extendida de Ridley Scott.",
+    },
+    {
+      title: "Drama",
+      description1: "El valor para cambiar tu destino está en ti.",
+    },
+    { title: "Crimen", description1: "Nueva serie." },
   ];
 
   return (
@@ -99,10 +121,30 @@ export default function Home() {
         <div className="relative w-full h-[100vh] flex flex-col items-center">
           {/* Imagen principal con animación de inclinación */}
           <div className="relative w-[80%] h-screen">
-            <VideoToImage
-              videoSrc="/videos/iphone_16_video.mp4"
-              imageSrc="/image/iphone_16_pro__.jpg"
-            />
+            <div className="relative w-full h-full">
+              <video
+                ref={videoRef}
+                className="max-h-[95vh] w-full"
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                onEnded={handleVideoEnd}
+                controls={false}
+              >
+                <source src={"/videos/iphone_16_video.mp4"} type="video/mp4" />
+                {/* Si el navegador no soporta el video, muestra la imagen de respaldo */}
+                Tu navegador no soporta la reproducción de este video.
+                <Image
+                  src={"/image/iphone_16_pro__.jpg"}
+                  alt="Imagen de respaldo"
+                  layout="responsive"
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                />
+              </video>
+            </div>
           </div>
 
           {/* Texto en la parte superior */}
@@ -300,10 +342,30 @@ export default function Home() {
           <div className="image-wrapper w-[80%] flex items-center justify-center">
             <div className="animation-wrapper">
               <div className="relative">
-                <VideoToImage
-                  videoSrc="/videos/reloj.mp4"
-                  imageSrc="/image/watch_series_10.jpg"
-                />
+                <div className="relative w-full h-full">
+                  <video
+                    ref={videoRef}
+                    className="max-h-[95vh] w-full"
+                    autoPlay
+                    muted
+                    playsInline
+                    preload="auto"
+                    onEnded={handleVideoEnd}
+                    controls={false}
+                  >
+                    <source src={"/videos/reloj.mp4"} type="video/mp4" />
+                    {/* Si el navegador no soporta el video, muestra la imagen de respaldo */}
+                    Tu navegador no soporta la reproducción de este video.
+                    <Image
+                      src={"/image/watch_series_10.jpg"}
+                      alt="Imagen de respaldo"
+                      layout="responsive"
+                      width={1920}
+                      height={1080}
+                      quality={100}
+                    />
+                  </video>
+                </div>
               </div>
             </div>
           </div>
