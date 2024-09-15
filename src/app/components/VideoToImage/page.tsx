@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from "react";
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
 interface VideoToImageProps {
   videoSrc: string;
@@ -6,7 +7,7 @@ interface VideoToImageProps {
 }
 
 const VideoToImage: React.FC<VideoToImageProps> = ({ videoSrc, imageSrc }) => {
-  const videoRef:any = useRef(null);
+  const videoRef: any = useRef(null);
 
   const handleVideoEnd = () => {
     if (videoRef.current) {
