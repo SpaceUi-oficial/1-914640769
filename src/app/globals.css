@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Personalización de los puntos de la paginación */
+.swiper-pagination-bullet {
+  background-color: #d3d3d3 !important; /* Color gris para los puntos */
+  opacity: 1 !important; /* Aseguramos que no sean transparentes */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important; /* Color negro para el punto activo */
+}
+
+/* Ubicación de la paginación */
+.swiper-pagination {
+  position: absolute !important;
+  bottom: 10px !important; /* Ajusta la posición según lo necesites */
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+
+/* Estilo para el scrollbar en navegadores webkit (Chrome, Safari, etc.) */
+/* Cambia el color del scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho del scrollbar */
+}
+
+/* Cambia el color del fondo del scrollbar */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Color del fondo */
+}
+
+/* Cambia el color del thumb (la parte deslizable del scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5px;
+
+}
+
+/* Cambia el color del thumb cuando se desplaza */
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc; /* Color del thumb al pasar el mouse */
+}
