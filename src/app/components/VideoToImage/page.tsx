@@ -6,8 +6,10 @@ interface VideoToImageProps {
   videoSrc: string;
   imageSrc: string;
 }
-
-const VideoToImage = ({ videoSrc, imageSrc }: VideoToImageProps) => {
+export default function VideoToImage({
+  videoSrc,
+  imageSrc,
+}: VideoToImageProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoEnd = () => {
@@ -42,6 +44,4 @@ const VideoToImage = ({ videoSrc, imageSrc }: VideoToImageProps) => {
       </video>
     </div>
   );
-};
-
-export default VideoToImage;
+}
