@@ -2,37 +2,41 @@
 import Image from "next/image";
 import { FaPause } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import { useRef, useState, useEffect } from "react";
-import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 import CarouselSection from "./components/carruselSection/page";
 import VideoToImage from "./components/VideoToImage/page";
 
 export default function Home() {
-  const video1Ref: any = useRef(null);
-  const video2Ref: any = useRef(null);
 
-  const [isPlaying1, setIsPlaying1] = useState(true);
-  const [isPlaying2, setIsPlaying2] = useState(true);
-
+  const video1Ref = useRef<HTMLVideoElement | null>(null);
+  const video2Ref = useRef<HTMLVideoElement | null>(null);
+  
+  const [isPlaying1, setIsPlaying1] = useState<boolean>(true);
+  const [isPlaying2, setIsPlaying2] = useState<boolean>(true);
+  
   const toggleVideo1 = () => {
-    if (video1Ref.current.paused) {
-      video1Ref.current.play();
-      setIsPlaying1(true);
-    } else {
-      video1Ref.current.pause();
-      setIsPlaying1(false);
+    if (video1Ref.current) {
+      if (video1Ref.current.paused) {
+        video1Ref.current.play();
+        setIsPlaying1(true);
+      } else {
+        video1Ref.current.pause();
+        setIsPlaying1(false);
+      }
     }
   };
-
+  
   const toggleVideo2 = () => {
-    if (video2Ref.current.paused) {
-      video2Ref.current.play();
-      setIsPlaying2(true);
-    } else {
-      video2Ref.current.pause();
-      setIsPlaying2(false);
+    if (video2Ref.current) {
+      if (video2Ref.current.paused) {
+        video2Ref.current.play();
+        setIsPlaying2(true);
+      } else {
+        video2Ref.current.pause();
+        setIsPlaying2(false);
+      }
     }
   };
   const images = [
@@ -428,7 +432,7 @@ export default function Home() {
           onClick={toggleVideo2}
           className="absolute bottom-4 right-4 bg-[#353537] text-white px-4 py-4 rounded-full shadow-lg hover:bg-[#1e1e1f] focus:outline-none z-20"
         >
-          {isPlaying1 ? <FaPause /> : <FaPlay />}
+          {isPlaying2 ? <FaPause /> : <FaPlay />}
         </button>
         {/* Filtro oscuro sobre el video */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
