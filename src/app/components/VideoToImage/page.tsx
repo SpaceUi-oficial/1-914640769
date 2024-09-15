@@ -2,14 +2,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 
-interface VideoToImageProps {
-  videoSrc: string;
-  imageSrc: string;
-}
-export default function VideoToImage({
-  videoSrc,
-  imageSrc,
-}: VideoToImageProps) {
+const VideoToImage = ({ videoSrc, imageSrc }: any) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoEnd = () => {
@@ -44,4 +37,6 @@ export default function VideoToImage({
       </video>
     </div>
   );
-}
+};
+
+export default VideoToImage;
