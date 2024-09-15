@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useRef } from "react";
 import Image from "next/image";
 
@@ -8,7 +7,7 @@ interface VideoToImageProps {
   imageSrc: string;
 }
 
-const VideoToImage = ({ videoSrc, imageSrc }: VideoToImageProps) => {
+const VideoToImage: React.FC<VideoToImageProps> = ({ videoSrc, imageSrc }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoEnd = () => {

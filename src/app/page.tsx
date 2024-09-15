@@ -7,15 +7,13 @@ import { motion } from "framer-motion";
 
 import CarouselSection from "./components/carruselSection/page";
 import VideoToImage from "./components/VideoToImage/page";
-
 export default function Home() {
-
   const video1Ref = useRef<HTMLVideoElement | null>(null);
   const video2Ref = useRef<HTMLVideoElement | null>(null);
-  
+
   const [isPlaying1, setIsPlaying1] = useState<boolean>(true);
   const [isPlaying2, setIsPlaying2] = useState<boolean>(true);
-  
+
   const toggleVideo1 = () => {
     if (video1Ref.current) {
       if (video1Ref.current.paused) {
@@ -27,7 +25,7 @@ export default function Home() {
       }
     }
   };
-  
+
   const toggleVideo2 = () => {
     if (video2Ref.current) {
       if (video2Ref.current.paused) {
@@ -52,33 +50,12 @@ export default function Home() {
   const texts = [
     { title: "Comedia", description1: "Todo es posible en el paraíso" },
     { title: "Acción", description1: "El peor robo del mundo." },
-    {
-      title: "Suspenso",
-      description1:
-        "Natalie Portman y Moses Ingram protagonizan un visionario thriller.",
-    },
-    {
-      title: "Crimen",
-      description1:
-        "La historia inspirada en crímenes reales y las mujeres que los resolvieron.",
-    },
-    {
-      title: "Ciencia ficción",
-      description1: "Una vida, posibilidades infinitas.",
-    },
-    {
-      title: "Drama",
-      description1: "Disfruta la versión extendida de Ridley Scott.",
-    },
-
-    {
-      title: "Drama",
-      description1: "El valor para cambiar tu destino está en ti.",
-    },
-
-    { title: "Crimen", description1: "Nueva serie." },
-
-    // Más textos
+    { title: "Suspenso", description1: "Natalie Portman y Moses Ingram protagonizan un visionario thriller." },
+    { title: "Crimen", description1: "La historia inspirada en crímenes reales y las mujeres que los resolvieron." },
+    { title: "Ciencia ficción", description1: "Una vida, posibilidades infinitas." },
+    { title: "Drama", description1: "Disfruta la versión extendida de Ridley Scott." },
+    { title: "Drama", description1: "El valor para cambiar tu destino está en ti." },
+    { title: "Crimen", description1: "Nueva serie." }
   ];
 
   return (
