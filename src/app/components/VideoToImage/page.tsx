@@ -7,7 +7,7 @@ interface VideoToImageProps {
   imageSrc: string;
 }
 
-const VideoToImage: React.FC<VideoToImageProps> = ({ videoSrc, imageSrc }) => {
+const VideoToImage = ({ videoSrc, imageSrc }: VideoToImageProps) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoEnd = () => {
