@@ -2,12 +2,8 @@
 import { useRef } from "react";
 import Image from "next/image";
 
-interface VideoToImageProps {
-  videoSrc: string;
-  imageSrc: string;
-}
 
-const VideoToImage: React.FC<VideoToImageProps> = ({ videoSrc, imageSrc }) => {
+const VideoToImage: React.FC<{ videoSrc: string; imageSrc: string; }> = ({ videoSrc, imageSrc }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleVideoEnd = () => {
