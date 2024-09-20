@@ -19,7 +19,7 @@ const Navbar = () => {
             Inicio
           </Link>
           <Link 
-            href="/productos" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('productos')}
             onMouseLeave={() => setHovered(null)}
@@ -27,7 +27,7 @@ const Navbar = () => {
             Productos
           </Link>
           <Link 
-            href="/servicios" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('servicios')}
             onMouseLeave={() => setHovered(null)}
@@ -35,7 +35,7 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link 
-            href="/acerca-de" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('acerca-de')}
             onMouseLeave={() => setHovered(null)}
@@ -43,7 +43,7 @@ const Navbar = () => {
             Acerca de
           </Link>
           <Link 
-            href="/contacto" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('contacto')}
             onMouseLeave={() => setHovered(null)}
@@ -51,7 +51,7 @@ const Navbar = () => {
             Contacto
           </Link>
           <Link 
-            href="/blog" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('blog')}
             onMouseLeave={() => setHovered(null)}
@@ -59,7 +59,7 @@ const Navbar = () => {
             Blog
           </Link>
           <Link 
-            href="/soporte" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('soporte')}
             onMouseLeave={() => setHovered(null)}
@@ -67,7 +67,7 @@ const Navbar = () => {
             Soporte
           </Link>
           <Link 
-            href="/faq" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('faq')}
             onMouseLeave={() => setHovered(null)}
@@ -75,7 +75,7 @@ const Navbar = () => {
             FAQ
           </Link>
           <Link 
-            href="/testimonios" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('testimonios')}
             onMouseLeave={() => setHovered(null)}
@@ -83,7 +83,7 @@ const Navbar = () => {
             Testimonios
           </Link>
           <Link 
-            href="/politica-de-privacidad" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('politica-de-privacidad')}
             onMouseLeave={() => setHovered(null)}
@@ -91,7 +91,7 @@ const Navbar = () => {
             Política de Privacidad
           </Link>
           <Link 
-            href="/terminos-y-condiciones" 
+            href="/" 
             className="text-white text-sm hover:underline"
             onMouseEnter={() => setHovered('terminos-y-condiciones')}
             onMouseLeave={() => setHovered(null)}
