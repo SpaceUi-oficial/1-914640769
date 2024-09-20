@@ -330,7 +330,7 @@ export default function Home() {
       {/* Nueva Sección: Reloj */}
 
       <section className="section-series-10 relative  w-full bg-white flex items-center">
-        <div className="section-content h-[80vh] md:h-screen w-full flex flex-col md:flex-col items-center justify-center">
+        <div className="section-content h-[80vh] md:h-[110vh] w-full flex flex-col md:flex-col items-center justify-center">
           {/* Contenido del texto */}
           <div className="copy-wrapper text-center w-full p-8">
             <motion.div
@@ -346,7 +346,7 @@ export default function Home() {
                 width={284} // Puedes ajustar el tamaño según tus necesidades
                 height={99}
                 quality={100}
-                className="mx-auto mb-10 h-auto w-2/5"
+                className="mx-auto mb-10 h-auto w-1/4"
               />
             </motion.div>
             <motion.div
@@ -436,7 +436,7 @@ export default function Home() {
                   alt="Series 10 Logo"
                   width={284} // Ancho de la imagen, ajusta según lo necesites
                   height={99} // Alto de la imagen, ajusta según lo necesites
-                  className=" mx-auto h-auto w-2/5"
+                  className=" mx-auto h-auto w-1/4"
                   priority={true} // Si deseas que esta imagen sea prioritaria en la carga
                 />
               </motion.div>
@@ -628,32 +628,36 @@ export default function Home() {
       <section className="w-full h-[85vh] bg-white">
         <Swiper
           loop={true}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }} // Aumenta el delay del autoplay
           pagination={{ clickable: true }}
           spaceBetween={10} // Espacio entre slides
           slidesPerView={1.25} // Ver 1 slide completo y parte de otros
           centeredSlides={true} // Centra el slide activo
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Actualiza el índice activo
-          className="h-full " // Ajusta la altura del swiper
+          className="h-full" // Ajusta la altura del swiper
           modules={[Pagination, Autoplay]}
         >
           {imageSrcs.map((src, index) => (
             <SwiperSlide key={index} className="relative">
               <div className="relative h-[95%] w-full">
                 <Image
-                  src={src}
+                  src={`${src}?q_auto,f_auto`} // Optimización automática de calidad y formato
                   alt={`Slide ${index + 1}`}
                   fill
                   style={{ objectFit: "cover" }}
                   quality={100}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Añadido atributo sizes
+                  priority={true}
                   className="md:block hidden"
                 />
                 <Image
-                  src={imageSrcsSmall[index]}
+                  src={`${imageSrcsSmall[index]}?q_auto,f_auto`} // Optimización automática de calidad y formato para pantallas pequeñas
                   alt={`Slide ${index + 1}`}
                   fill
                   style={{ objectFit: "cover" }}
                   quality={100}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Añadido atributo sizes
+                  priority={true}
                   className="md:hidden block"
                 />
                 {index !== activeIndex && (
@@ -665,16 +669,16 @@ export default function Home() {
                     <div className="absolute md:hidden top-0 left-0 w-full h-full flex flex-col items-center justify-start z-50">
                       <div className="text-white p-4 rounded-lg">
                         {/* Imagen 1 */}
-                        <div className="relative w-[68px] h-[33px]  mx-auto mb-4">
+                        <div className="relative w-[68px] h-[33px] mx-auto mb-4">
                           <Image
-                            src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794291/ka2w0thf5ozdkjbn0ioj.png" // Reemplaza con la ruta de la imagen 1
+                            src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794291/ka2w0thf5ozdkjbn0ioj.png"
                             alt="Imagen 1"
                             fill
                             style={{ objectFit: "contain" }}
                           />
                         </div>
                         {/* Imagen 2 */}
-                        <div className="relative w-[220px] h-[54px]  mx-auto">
+                        <div className="relative w-[220px] h-[54px] mx-auto">
                           <Image
                             src={imageSrcsLogo[index]} // Reemplaza con la ruta de la imagen 2
                             alt="Imagen 2"
