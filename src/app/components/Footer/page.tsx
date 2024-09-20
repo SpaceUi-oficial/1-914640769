@@ -152,7 +152,7 @@ const Footer = () => {
         {/* Texto adicional y línea divisora */}
         <div className="text-gray-400 text-sm mb-4">
           <p className="mb-4">
-            <Link className=" text-blue-500 underline" href={"#1"}>
+            <Link className=" text-blue-500 underline" href={"#1"} title="Ingresa para buscar un distribuidor en tu zona">
               Busca un distribuidor
             </Link>{" "}
             cerca de ti.

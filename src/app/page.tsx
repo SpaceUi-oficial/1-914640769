@@ -131,11 +131,11 @@ export default function Home() {
           </video>
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center z-10 px-2 sm:px-4 md:px-0">
             {/* Texto completo para pantallas pequeñas */}
-            <h2 className="text-2xl hidden  md:block leading-tight font-semibold tracking-tight text-white mb-4">
+            <h1 className="text-2xl hidden  md:block leading-tight font-semibold tracking-tight text-white mb-4">
               Presentamos el iPhone 16 Pro y el iPhone 16. Los nuevos Apple
               Watch Series 10 y AirPods 4. El Apple Watch Ultra 2 y los AirPods
               Max en nuevos colores.
-            </h2>
+            </h1>
 
             {/* Texto acortado para pantallas medianas y más grandes */}
             <h2 className=" md:hidden  text-base sm:text-xl md:text-xl lg:text-2xl  leading-tight font-semibold tracking-tight text-white mb-4">
@@ -185,6 +185,7 @@ export default function Home() {
                     "https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794463/usiixm6xzqs0mladcm1c.jpg"
                   }
                   alt="Imagen de respaldo"
+                  title="Imagen de respaldo si tu navegador no soporta el video"
                   width={1920}
                   height={1080}
                   quality={100}
@@ -264,6 +265,7 @@ export default function Home() {
             <Image
               src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794462/jcq0ffnenimp739llktv.png" // Usa la URL de tu imagen
               alt="Imagen Animada"
+              title="Imagen Animada de iphone 16 blue"
               fill
               style={{ objectFit: "contain" }}
               className="absolute inset-0"
@@ -343,6 +345,7 @@ export default function Home() {
               <Image
                 src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794459/ykhhtdm5m4tq0kwsmpb9.png"
                 alt="Series 10 Logo"
+                title="Series 10 Logo / Nombre"
                 width={284} // Puedes ajustar el tamaño según tus necesidades
                 height={99}
                 quality={100}
@@ -408,6 +411,7 @@ export default function Home() {
                         "https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794466/b55jtda6add9qwgmhpzb.jpg"
                       }
                       alt="Imagen de respaldo"
+                      title="Imagen de respaldoSi el navegador no soporta el video"
                       width={1920}
                       height={1080}
                       quality={100}
@@ -434,6 +438,7 @@ export default function Home() {
                 <Image
                   src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794465/kjehoqyqgp13xyerpefc.png"
                   alt="Series 10 Logo"
+                  title="Series 10 Logo / Nombre"
                   width={284} // Ancho de la imagen, ajusta según lo necesites
                   height={99} // Alto de la imagen, ajusta según lo necesites
                   className=" mx-auto h-auto w-1/4"
@@ -473,15 +478,16 @@ export default function Home() {
           </div>
 
           {/* Contenido de la imagen */}
-          <div className="image-wrapper h-full w-full md:w-[80%] flex items-center justify-center">
-            <div className="animation-wrapper h-full">
-              <div className="relative h-full  content-end ">
+          <div className="image-wrapper h-full w-full md:w-[50%] flex items-center justify-center">
+            <div className="animation-wrapper h-full w-full">
+              <div className="relative h-full   content-end ">
                 <Image
                   src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794461/aorsse6ks7xwzfqcfawv.jpg"
                   alt="Content after video"
+                  title="Image after video"
                   width={1200} // Ancho de la imagen, ajusta según lo necesites
                   height={800} // Alto de la imagen, ajusta según lo necesites
-                  className=" w-full h-auto"
+                  className=" w-[90%] h-auto"
                 />
               </div>
             </div>
@@ -541,6 +547,7 @@ export default function Home() {
               <Image
                 src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794460/bjdt89batu9cnb0xd7nj.jpg"
                 alt="Background"
+                title="Background Image"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -565,6 +572,7 @@ export default function Home() {
               <Image
                 src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794467/fejctqvv6nv0kbjnpfut.jpg"
                 alt="Background"
+                title="Background Image"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -587,6 +595,7 @@ export default function Home() {
               <Image
                 src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794469/d2ajawq05pxproeaq6in.jpg"
                 alt="Background"
+                title="Background Image"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -608,6 +617,7 @@ export default function Home() {
               <Image
                 src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794465/rrrbysa6eahtfntdxpjn.jpg"
                 alt="Background"
+                title="Background Image"
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -643,6 +653,7 @@ export default function Home() {
                 <Image
                   src={`${src}?q_auto,f_auto`} // Optimización automática de calidad y formato
                   alt={`Slide ${index + 1}`}
+                  title={`Slide Image ${index + 1}`}
                   fill
                   style={{ objectFit: "cover" }}
                   quality={100}
@@ -653,6 +664,7 @@ export default function Home() {
                 <Image
                   src={`${imageSrcsSmall[index]}?q_auto,f_auto`} // Optimización automática de calidad y formato para pantallas pequeñas
                   alt={`Slide ${index + 1}`}
+                  title={`Slide Image ${index + 1}`}
                   fill
                   style={{ objectFit: "cover" }}
                   quality={100}
@@ -673,6 +685,8 @@ export default function Home() {
                           <Image
                             src="https://res.cloudinary.com/djnpyyl6b/image/upload/v1726794291/ka2w0thf5ozdkjbn0ioj.png"
                             alt="Imagen 1"
+                            title="Imagen 1"
+
                             fill
                             style={{ objectFit: "contain" }}
                           />
@@ -682,6 +696,7 @@ export default function Home() {
                           <Image
                             src={imageSrcsLogo[index]} // Reemplaza con la ruta de la imagen 2
                             alt="Imagen 2"
+                            title="Imagen 2"
                             fill
                             style={{ objectFit: "contain" }}
                           />
