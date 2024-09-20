@@ -1,6 +1,35 @@
-// src/components/Footer.tsx
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 const Footer = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  // Función para alternar la visibilidad de la lista
+  const toggleList = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const textos = [
+    "Descubrir",
+    "Apple Wallet",
+    "Cuenta",
+    "Entretenimiento",
+    "Para la empresa",
+    "Valores de Apple",
+    "Acerca de Apple",
+  ];
+
+  
+  // Listas de items
+  const listas = [
+    ["Mac", "iPad", "iPhone", "Watch", "AirPods", "TV y Casa", "AirTag"], // Lista para "Ubicaciones"
+    ["Apple Pay"], // Lista para "Categorías"
+    ["Administrar tu Apple ID", "iCloud.com"], // Lista para "Administrar tu Apple ID e iCloud"
+    ["Apple One", "Apple TV+", "Apple Music", "Apple Arcade", "Apple Podcasts", "Apple Books", "App Store"], // Lista para "Servicios de Apple"
+    ["Apple y la empresa"], // Lista para "Apple y la empresa"
+    ["Accesibilidad", "Medio ambiente", "Privacidad"], // Lista para "Accesibilidad y privacidad"
+    ["Newsroom", "Directivos de Apple", "Oportunidades laborales", "Inversionistas", "Ética y cumplimiento de políticas", "Eventos", "Contactar a Apple"] // Lista para "Más información"
+  ];
   return (
     <footer className="bg-[#f5f5f7] py-8">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -33,7 +62,7 @@ const Footer = () => {
         </div>
 
         {/* Contenido de las columnas */}
-        <div className="grid grid-cols-4 gap-4 text-gray-400 text-sm mb-4">
+        <div className="md:grid hidden grid-cols-4 gap-4 text-gray-400 text-sm mb-4 ">
           {/* Columna 1 con la primera palabra en negro */}
           <div className="flex flex-col gap-2">
             <p className="text-black">Descubrir</p>
@@ -85,12 +114,46 @@ const Footer = () => {
             <p>Contactar a Apple</p>
           </div>
         </div>
+        <div className="w-full max-w-md mx-auto mt-10 md:hidden block">
+          {textos.map((texto, index) => (
+            <div key={index} className="mb-4">
+              {/* Texto que se puede tocar */}
+              <div
+                className="cursor-pointer text-xl font-semibold flex items-center justify-between text-black mb-2" // Texto en negro
+                onClick={() => toggleList(index)} // El tipo de index ahora es number
+              >
+                {texto}
+                <span className="ml-2">
+                  {activeIndex === index ? "-" : "+"}
+                </span>
+              </div>
+              {/* Lista que aparece al hacer clic con animación */}
+              <div
+                className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
+                  activeIndex === index ? "max-h-[500px]" : "max-h-0"
+                }`}
+              >
+                {activeIndex === index && (
+                  <ul className="pl-4">
+                    {listas[index].map((item, i) => (
+                      <li key={i} className=" list-none text-gray-700">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {/* Línea debajo del texto */}
+              <div className="h-[2px] bg-gray-300 mt-2 mb-4"></div>
+            </div>
+          ))}
+        </div>
 
         {/* Texto adicional y línea divisora */}
         <div className="text-gray-400 text-sm mb-4">
           <p className="mb-4">
             <Link className=" text-blue-500 underline" href={"#1"}>
-              Busca un distribuidor 
+              Busca un distribuidor
             </Link>{" "}
             cerca de ti.
           </p>
@@ -98,7 +161,7 @@ const Footer = () => {
         </div>
 
         {/* Nuevas tres columnas */}
-        <div className="grid grid-cols-3 gap-4 text-gray-400 text-xs">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400 text-xs">
           {/* Columna 1 */}
           <div>
             <p>Copyright © 2024 Apple Inc. Todos los derechos reservados.</p>

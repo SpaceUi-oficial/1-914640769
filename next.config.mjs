@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['www.apple.com'],
-    },
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'res.cloudinary.com',
+            port: '',
+            pathname: '/**', // Permite todas las rutas desde Cloudinary
+          },
+        ],
+      },
 };
 
 export default nextConfig;
