@@ -487,8 +487,8 @@ export default function Home() {
                   title="Image after video"
                   width={1200} // Ancho de la imagen, ajusta según lo necesites
                   height={800} // Alto de la imagen, ajusta según lo necesites
-                  className=" w-[90%] h-auto"
-                />
+                  className=" w-[90%] h-auto mx-auto "
+                /> 
               </div>
             </div>
           </div>
