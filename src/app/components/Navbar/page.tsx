@@ -426,10 +426,9 @@ const Navbar = () => {
                           "Entertainment",
                           "Soporte",
                           "Dónde comprar",
-                        ].map((item) => (
-                          <div>
+                        ].map((item,index) => (
+                          <div key={index}>
                             <button
-                              key={item}
                               className="text-2xl w-auto" // Cambié a w-auto para que no ocupe el 100%
                               onClick={() => setActiveMenu(item.toLowerCase())} // Asegúrate de que el menú sea coherente
                             >
